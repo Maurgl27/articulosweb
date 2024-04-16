@@ -1,0 +1,236 @@
+body {
+    background-color: #212125;
+    color: #808080; /* Un gris medio */
+}
+  
+  
+.contenedor{
+    margin: auto;
+    width: 940px;
+    position: relative;
+}
+.titl-style{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #F3BA2F; /* Amarillo dorado de Binance */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+.botonlike{
+    display: flex;
+    justify-content: end;
+}
+.imgdiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgPrincipal img{
+    width: 940px;
+    height: 726px;
+    border-radius: 20px;
+    object-fit: cover; /* Esta línea asegura que la imagen se redimensione correctamente */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+.img-seccion {
+    display: flex;
+    justify-content: center;
+}
+  
+.img-seccion img {
+    width: 600px; /* Ancho fijo de 800px */
+    height: 600px; /* Altura fija de 800px */
+    border-radius: 20px;
+    object-fit: cover; /* Asegura que la imagen se redimensione correctamente */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+.seccion-titulo{
+    color: #F3BA2F; /* Amarillo dorado de Binance */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+} 
+  
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+  
+.card {
+    margin: 10px;
+}
+.sidebar {
+    display: flex;
+    flex-wrap: wrap; /* Añadido */
+    align-content: flex-start; /* Añadido */
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0; /* El menú lateral siempre está visible */
+    width: 250px; /* Ancho de tu menú lateral */
+    padding: 0px; /* Modificado */
+    background-color: rgba(65, 65, 65, 0.20); /* Color de fondo semi-transparente al 20% */
+    backdrop-filter: blur(2px); /* Desenfoque del fondo a 5px */
+}
+
+.ui-btn {
+    --btn-default-bg: rgb(41, 41, 41);
+    --btn-padding: 10px; /* Modificado */
+    --btn-hover-bg: rgb(51, 51, 51);
+    --btn-transition: .3s;
+    --btn-letter-spacing: .1rem;
+    --btn-animation-duration: 1.2s;
+    --btn-shadow-color: rgba(0, 0, 0, 0.137);
+    --btn-shadow: 0 2px 10px 0 var(--btn-shadow-color);
+    --hover-btn-color: #FAC921;
+    --default-btn-color: #fff;
+    --font-size: 16px;
+    --font-weight: 600;
+    --font-family: Menlo,Roboto Mono,monospace;
+  }
+  
+  .ui-btn {
+    width: auto;
+    height: auto;
+    box-sizing: border-box;
+    padding: var(--btn-padding);
+    margin: 2px; /* Añadido */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--default-btn-color);
+    font: var(--font-weight) var(--font-size) var(--font-family);
+    background: var(--btn-default-bg);
+    border: none;
+    cursor: pointer;
+    transition: var(--btn-transition);
+    overflow: hidden;
+    box-shadow: var(--btn-shadow);
+  }
+  
+  /* Resto del código... */
+  
+  .ui-btn span {
+    letter-spacing: var(--btn-letter-spacing);
+    transition: var(--btn-transition);
+    box-sizing: border-box;
+    position: relative;
+    background: inherit;
+  }
+  
+  .ui-btn span::before {
+    box-sizing: border-box;
+    position: absolute;
+    content: "";
+    background: inherit;
+  }
+  
+  .ui-btn:hover, .ui-btn:focus {
+    background: var(--btn-hover-bg);
+  }
+  
+  .ui-btn:hover span, .ui-btn:focus span {
+    color: var(--hover-btn-color);
+  }
+  
+  .ui-btn:hover span::before, .ui-btn:focus span::before {
+    animation: chitchat linear both var(--btn-animation-duration);
+  }
+  
+  @keyframes chitchat {
+    0% {
+      content: "#";
+    }
+  
+    5% {
+      content: ".";
+    }
+  
+    10% {
+      content: "^{";
+    }
+  
+    15% {
+      content: "-!";
+    }
+  
+    20% {
+      content: "#$_";
+    }
+  
+    25% {
+      content: "№:0";
+    }
+  
+    30% {
+      content: "#{+.";
+    }
+  
+    35% {
+      content: "@}-?";
+    }
+  
+    40% {
+      content: "?{4@%";
+    }
+  
+    45% {
+      content: "=.,^!";
+    }
+  
+    50% {
+      content: "?2@%";
+    }
+  
+    55% {
+      content: "\;1}]";
+    }
+  
+    60% {
+      content: "?{%:%";
+      right: 0;
+    }
+  
+    65% {
+      content: "|{f[4";
+      right: 0;
+    }
+  
+    70% {
+      content: "{4%0%";
+      right: 0;
+    }
+  
+    75% {
+      content: "'1_0<";
+      right: 0;
+    }
+  
+    80% {
+      content: "{0%";
+      right: 0;
+    }
+  
+    85% {
+      content: "]>'";
+      right: 0;
+    }
+  
+    90% {
+      content: "4";
+      right: 0;
+    }
+  
+    95% {
+      content: "2";
+      right: 0;
+    }
+  
+    100% {
+      content: "";
+      right: 0;
+    }
+  }
+

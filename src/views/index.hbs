@@ -1,0 +1,95 @@
+<div class="contenedor">
+    <div class="titl-style">
+        <h1>{{titulo}}</h1>
+        <h2>{{infoTitulo}}</h1>
+    </div>
+
+    <div class="botonlike">
+            <button><i class="bi bi-hand-thumbs-up"></i></button>
+            <button><i class="bi bi-hand-thumbs-down"></i></button>
+            <p>{{voto}}</p>
+    </div>
+
+    <div class="imgdiv">
+        <div class="imgPrincipal">
+            <img src="{{img}}" alt="Imagen del artículo">
+            {{#each hashtags}}
+              <span class="hashtag">{{this}}</span>
+            {{/each}}
+        </div> 
+
+        <div class="seccion">
+            {{#each infoSecciones}}
+                <br>
+                <div class="seccion-titulo">
+                    {{this.titulo}}
+                </div>
+                <br>
+                <div class="img-seccion">
+                    <img src="{{this.imgInicio}}" alt="">
+                </div>
+                <br>
+                <p>{{this.info}}</p>
+                
+            {{/each}}
+            <br>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, molestias tempore placeat totam fugiat ut illum vero alias? Eius qui distinctio, et a ad soluta expedita enim autem quod iste?</p>
+            <h1>footer</h1>
+        </div>  
+    </div>
+
+</div>
+  <!-- El resto de tu contenido HTML va aquí -->
+
+  <!-- Asegúrate de reemplazar 'ruta/a/tu/archivo' con la ruta correcta a tu archivo main.js -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+
+<script src="/js/main.js"></script>
+
+  <script>
+    document.querySelectorAll('.botonlike button').forEach(button => {
+      button.addEventListener('click', function() {
+        var voto = 0;
+        if (this.firstChild.classList.contains('bi-hand-thumbs-up')) {
+          voto = 1;
+        } else if (this.firstChild.classList.contains('bi-hand-thumbs-down')) {
+          voto = -1;
+        }
+        var id = '{{id}}';
+        console.log('ID del artículo:', id); // Esta línea imprimirá el ID del artículo en la consola
+
+        // Verificar si voto es un número
+        if (isNaN(voto)) {
+          console.error('Voto inválido');
+          return;
+        }
+
+        // Imprimir el valor de voto
+        console.log('Valor de voto:', voto);
+
+        fetch('/voto/' + id, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ voto: voto })
+        })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Error al registrar el voto');
+          }
+          return response.json();
+        })
+        .then(data => {
+          // actualiza el recuento de votos en la página
+          var votosActuales = parseInt(document.querySelector('.botonlike p').textContent);
+          document.querySelector('.botonlike p').textContent = votosActuales + voto;
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+      });
+    });
+  </script>
+
+

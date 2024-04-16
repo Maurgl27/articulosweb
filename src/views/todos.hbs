@@ -1,0 +1,13 @@
+<h1>TODOS</h1>
+<div class="card-container">
+    {{#each articulos}}
+    <div class="card" style="width: 18rem;">
+      <img src="{{this.img}}" class="card-img-top" alt="Imagen del artículo">
+      <div class="card-body">
+        <h5 class="card-title">{{this.titulo}}</h5>
+        <p class="card-text">{{this.infoTitulo}}</p>
+        <a href="/articulos/{{this._id}}" class="btn btn-primary">Ver más</a>
+      </div>
+    </div>
+    {{/each}}
+</div>
